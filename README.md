@@ -34,13 +34,13 @@ Each module is contained in its own Jupyter Notebook, providing a mix of instruc
 To begin the course, clone this repository to your local machine:
 
 ```bash
-git clone https://github.com/<your-github-username>/Elegoo-Smart-Car-V4-Course.git
+git clone https://github.com/feraco/Bot-Vision-Python.git
 ```
 
 Navigate to the repository directory and start Jupyter Notebook:
 
 ```bash
-cd Elegoo-Smart-Car-V4-Course
+cd Bot-Vision-Python
 jupyter notebook
 ```
 
