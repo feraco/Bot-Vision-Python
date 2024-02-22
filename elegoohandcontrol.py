@@ -48,13 +48,13 @@ if response.status_code == 200:
                     fingers = detectorH.fingersUp()
                     # Define gestures for controlling the Elegoo Smart Car
                     if fingers == [1, 1, 1, 1, 1]:  # Open hand - Move Forward
-                        send_command({"N": 2, "D1": 1, "D2": 200, "T": 1000})
-                    elif fingers == [0, 1, 0, 0, 0]:  # Index finger - Move Backward
-                        send_command({"N": 2, "D1": 2, "D2": 200, "T": 1000})
-                    elif fingers == [0, 0, 0, 0, 1]:  # Pinky - Turn Left
                         send_command({"N": 2, "D1": 3, "D2": 200, "T": 1000})
-                    elif fingers == [1, 0, 0, 0, 0]:  # Thumb - Turn Right
+                    elif fingers == [0, 1, 0, 0, 0]:  # Index finger - Move Backward
                         send_command({"N": 2, "D1": 4, "D2": 200, "T": 1000})
+                    elif fingers == [0, 0, 0, 0, 1]:  # Pinky - Turn Left
+                        send_command({"N": 2, "D1": 1, "D2": 200, "T": 1000})
+                    elif fingers == [1, 0, 0, 0, 0]:  # Thumb - Turn Right
+                        send_command({"N": 2, "D1": 2, "D2": 200, "T": 1000})
                     # Add more gestures as needed
 
                 cv2.imshow('Elegoo Smart Car Camera Stream', img)

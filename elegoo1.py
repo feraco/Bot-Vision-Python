@@ -9,7 +9,7 @@ port = 100
 # Define the command to move the car forward for 5 seconds at speed 150
 command = {
     "N": 2,  # Car control mode with time limit
-    "D1": 3,  # Direction (1 for forward, 2 for backward, adjust as needed)
+    "D1": 3,
     "D2": 150,  # Speed (0-255)
     "T": 5000  # Time in milliseconds
 }
