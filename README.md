@@ -84,3 +84,117 @@ We welcome contributions and suggestions! If you have ideas for improving the co
 ## About the Developer
 
 Frederick Feraco is a dedicated developer and educator passionate about bringing robotics and programming closer to students of all ages. With a background in computer science and extensive experience in teaching, Frederick aims to create engaging, educational content that inspires and equips the next generation of programmers and engineers.
+
+# Detailed Reference Guide for ArduinoCarController Functions
+
+## Class Overview
+The `ArduinoCarController` class provides methods to control an Arduino-based smart car remotely. Below is a detailed guide on each method, explaining its purpose and usage.
+
+### move_forward(duration_ms, speed)
+- **Purpose**: Commands the car to move forward.
+- **Parameters**:
+  - `duration_ms`: The duration in milliseconds for which the car should move forward.
+  - `speed`: The speed at which the car should move (0-255).
+- **Usage**:
+  ```python
+  car_controller.move_forward(2000, 150)
+  ```
+
+### move_backward(duration_ms, speed)
+- **Purpose**: Commands the car to move backward.
+- **Parameters**:
+  - `duration_ms`: The duration in milliseconds for which the car should move backward.
+  - `speed`: The speed at which the car should move (0-255).
+- **Usage**:
+  ```python
+  car_controller.move_backward(1000, 100)
+  ```
+
+### turn_left(duration_ms, speed)
+- **Purpose**: Commands the car to turn left.
+- **Parameters**:
+  - `duration_ms`: The duration in milliseconds for which the car should turn left.
+  - `speed`: The speed at which the car should turn (0-255).
+- **Usage**:
+  ```python
+  car_controller.turn_left(500, 100)
+  ```
+
+### turn_right(duration_ms, speed)
+- **Purpose**: Commands the car to turn right.
+- **Parameters**:
+  - `duration_ms`: The duration in milliseconds for which the car should turn right.
+  - `speed`: The speed at which the car should turn (0-255).
+- **Usage**:
+  ```python
+  car_controller.turn_right(500, 100)
+  ```
+
+### lighting_control_timed(sequence, red, green, blue, duration_ms)
+- **Purpose**: Controls the car's lighting with specified RGB values for a limited time.
+- **Parameters**:
+  - `sequence`: Lighting sequence (e.g., left, front, right, back, center).
+  - `red`: Red color value (0-255).
+  - `green`: Green color value (0-255).
+  - `blue`: Blue color value (0-255).
+  - `duration_ms`: Duration in milliseconds for the lighting effect.
+- **Usage**:
+  ```python
+  car_controller.lighting_control_timed(1, 255, 0, 0, 5000)
+  ```
+
+### lighting_control(sequence, red, green, blue)
+- **Purpose**: Controls the car's lighting with specified RGB values without a time limit.
+- **Parameters**:
+  - `sequence`: Lighting sequence.
+  - `red`: Red color value (0-255).
+  - `green`: Green color value (0-255).
+  - `blue`: Blue color value (0-255).
+- **Usage**:
+  ```python
+  car_controller.lighting_control(1, 255, 255, 255)
+  ```
+
+### ultrasonic_sensor(status)
+- **Purpose**: Controls the ultrasonic sensor's mode or status.
+- **Parameters**:
+  - `status`: Status or mode for the ultrasonic sensor (e.g., 1 for start detection).
+- **Usage**:
+  ```python
+  car_controller.ultrasonic_sensor(1)
+  ```
+
+### ir_sensor_line_tracking(status)
+- **Purpose**: Sets the IR sensor to line tracking mode or checks its status.
+- **Parameters**:
+  - `status`: Status or mode for the IR sensor (e.g., 1 for line detection).
+- **Usage**:
+  ```python
+  car_controller.ir_sensor_line_tracking(1)
+  ```
+
+### check_car_leaves_ground()
+- **Purpose**: Checks if the car has left the ground. No additional parameters required.
+- **Usage**:
+  ```python
+  car_controller.check_car_leaves_ground()
+  ```
+
+### enter_standby_mode()
+- **Purpose**: Clears all functions and enters standby mode.
+- **Usage**:
+  ```python
+  car_controller.enter_standby_mode()
+  ```
+
+### switch_car_mode(mode)
+- **Purpose**: Switches the car's mode, such as TraceBased, ObstacleAvoidance, or Follow.
+- **Parameters**:
+  - `mode`: Mode selection (e.g., 1 for TraceBased).
+- **Usage**:
+  ```python
+  car_controller.switch_car_mode(1)
+  ```
+
+This guide aims to provide clear instructions on how to use each function within the ArduinoCarController class effectively.
+
