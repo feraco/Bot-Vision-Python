@@ -8,11 +8,42 @@ Welcome to the Elegoo Smart Car V4 Programming Course repository, curated by Fre
 The primary goal of this course is to provide a comprehensive learning experience that combines theory with practical applications. Students will engage with a series of Jupyter Notebooks that progressively build their understanding and skills in robotics programming, computer vision, and network communication.
 
 ## Prerequisites
+Instructions Summary:
+Create a Virtual Environment:
 
+Navigate to your project directory in the terminal.
+Run 
+```bash
+python -m venv venv
+```
+or 
+```bash
+python3 -m venv venv
+```
+to create a virtual environment named venv.
+Activate the Virtual Environment:
+
+On Windows, run
+```bash
+ .\\venv\\Scripts\\activate.
+   ```
+
+On macOS and Linux, run  
+```bash
+source venv/bin/activate.  
+```
+Install Dependencies:
+
+Ensure you have a requirements.txt file in the project directory.
+Run 
+```bash
+pip install -r requirements.txt
+```
+to install the required packages.
 Before you begin, ensure you have the following:
 - **Python 3.x installed**: Make sure you have a Python 3.x environment set up. You can download Python from [python.org](https://www.python.org/downloads/).
 - **OpenCV and other dependencies**: This course requires OpenCV, NumPy, and Requests libraries. You can install these using pip:
-  ```bash
+```bash
   pip install opencv-python-headless numpy requests
   ```
 - **Elegoo Smart Car V4**: This course is designed specifically for the Elegoo Smart Car V4. Ensure your car is assembled and ready for programming.
