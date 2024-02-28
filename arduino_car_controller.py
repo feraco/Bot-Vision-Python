@@ -167,7 +167,28 @@ class ArduinoCarController:
             "N": 104,
             "D1": threshold
         })
+    def get_ultrasonic_distance(self):
+        """Requests the distance measured by the ultrasonic sensor."""
+        self._send_command({"N": 21})
+        # Assuming the car immediately sends back a response with the distance
+        data = self.sock.recv(1024).decode()
+        distance_info = json.loads(data)
+        return distance_info.get('distance', 0)
 
+    def obstacle_avoidance(self):
+        """Moves the car forward until an obstacle is detected, then turns."""
+        try:
+            while True:
+                distance = self.get_ultrasonic_distance()
+                if distance > 30:  # Safe distance threshold in cm
+                    self.move_forward(1000, 200)  # Move forward with speed 200 for 1 second
+                else:
+                    self.turn_left(500, 200)  # Turn left with speed 200 for 0.5 second
+                    # Additional logic to ensure it doesn't detect the same obstacle after turning
+        except KeyboardInterrupt:
+            print("Obstacle avoidance stopped.")
+        finally:
+            self._disconnect()
     def rotate_camera(self, direction):
         """
         Sets the camera rotation direction.
