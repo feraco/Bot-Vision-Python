@@ -112,7 +112,73 @@ class ArduinoCarController:
             "N": 101,
             "D1": mode
         })
+    def set_motor_rotation(self, motor, speed, direction):
+        """
+        Sets individual motor rotation direction and speed.
 
+        Parameters:
+        - motor: Integer, selects the motor (1-4) to control.
+        - speed: Integer (0-255), defines the speed of the motor.
+        - direction: Integer (0 or 1), sets the rotation direction (0 for clockwise, 1 for counterclockwise).
+        """
+        self._send_command({
+            "N": 1,
+            "D1": motor,
+            "D2": speed,
+            "D3": direction
+        })
+
+    def set_servo_angle(self, servo, angle):
+        """
+        Sets the servo motor to a specific rotation angle.
+
+        Parameters:
+        - servo: Integer, selects the servo (1 for camera servo, 2 for ultrasonic sensor servo).
+        - angle: Integer (0-180), the desired angle to set the servo to.
+        """
+        self._send_command({
+            "N": 5,
+            "D1": servo,
+            "D2": angle
+        })
+
+    def joystick_move(self, direction, speed):
+        """
+        Moves the car in a specific direction with a given speed using joystick commands.
+
+        Parameters:
+        - direction: Integer (1-8), defines the direction to move (forward, backward, left, right, and diagonals).
+        - speed: Integer (0-255), defines the speed of the movement.
+        """
+        self._send_command({
+            "N": 102,
+            "D1": direction,
+            "D2": speed
+        })
+
+    def adjust_tracking_threshold(self, threshold):
+        """
+        Adjusts the tracking sensitivity of the car.
+
+        Parameters:
+        - threshold: Integer (0-255), adjusts the sensitivity threshold for line tracking.
+        """
+        self._send_command({
+            "N": 104,
+            "D1": threshold
+        })
+
+    def rotate_camera(self, direction):
+        """
+        Sets the camera rotation direction.
+
+        Parameters:
+        - direction: Integer, defines the camera rotation direction (1 for left, 2 for right).
+        """
+        self._send_command({
+            "N": 106,
+            "D1": direction
+        })
     # Ensure the connection is closed if the controller is deleted
     def __del__(self):
         self._disconnect()
