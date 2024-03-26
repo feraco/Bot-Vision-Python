@@ -81,9 +81,6 @@ Open the first notebook in the series and follow the instructions contained with
 
 We welcome contributions and suggestions! If you have ideas for improving the course or want to add more content, please feel free to fork the repository, make your changes, and submit a pull request.
 
-## About the Developer
-
-Frederick Feraco is a dedicated developer and educator passionate about bringing robotics and programming closer to students of all ages. With a background in computer science and extensive experience in teaching, Frederick aims to create engaging, educational content that inspires and equips the next generation of programmers and engineers.
 
 # Detailed Reference Guide for ArduinoCarController Functions
 
